@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="static/vue.js" charset="UTF-8"></script>
+
+<!--2017年12月12日15:03:10
+html和js两种方式绑定DOM-->
+
+<!-- HTML   绑定DOM属性-->
+<div id="app">
+  <span v-bind:title="message">
+    HTML   鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
+</div>
+
+<!-- js   绑定DOM属性-->
+<div id="app2">
+    {{message}}
+</div>
+<script>
+    new Vue({
+        el: '#app2',
+        data: {
+            message: 'js页面加载于' + new Date().toLocaleString()
+        }
+    });
+</script>
+</body>
+</html>
